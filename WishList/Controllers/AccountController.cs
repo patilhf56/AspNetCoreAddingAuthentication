@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 namespace WishList.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         public IActionResult Index()
