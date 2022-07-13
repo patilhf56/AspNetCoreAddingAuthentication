@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WishList.Models.AccontViewModels
+namespace WishList.Models.AccountViewModels
 {
-    public class DataTypeAttribute
+    public class RegisterViewModel
     {
         [Required, EmailAddress]
         public string Email { get; set; }
-        [Required, StringLength(100, MinimumLength = 8)],private DataTypeAttribute(DataType.Password)]
-        public string Phone Password { get; set; }
-        [Required, System.ComponentModel.DataAnnotations.DataType(DataType.Password), Compare("Password", ErrorMessage = "The New Password and confirm New Password fields did not match.")]
-        public string ConfirmPassword { get; set; }
+         [Required, StringLength(100, MinimumLength = 8), DataType(DataType.Password)]
+        public string Password { get; set; }
+        [Required, DataType(DataType.Password), CompareAttribute("Password", ErrorMessage = "The New Password and Confirm New Password fields did not match.")]
+         public string ConfirmPassword { get; set; }
+
     }
 }
